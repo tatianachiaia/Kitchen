@@ -1,0 +1,96 @@
+[
+    {
+        "id": 1, 
+        "nombre": "Sushi salad", 
+        "precio": 800, 
+        "img": "./img/salad.jpg",
+        "cantidad": 1
+    },
+
+    { 
+        "id": 2, 
+        "nombre": "Pasta", 
+        "precio": 400, 
+        "img": "./img/pasta.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 3, 
+        "nombre": "Sopa", 
+        "precio": 400, 
+        "img": "./img/soup.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 4, 
+        "nombre": "Avocado toast", 
+        "precio": 600, 
+        "img": "./img/toast.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 5, 
+        "nombre": "Paella", 
+        "precio": 800, 
+        "img": "./img/pasta.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 6, 
+        "nombre": "Salmón rosado", 
+        "precio": 800, 
+        "img": "./img/salmon.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 7, 
+        "nombre": "burrito", 
+        "precio": 700, 
+        "img": "./img/burrito.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 8, 
+        "nombre": "Pizza", 
+        "precio": 600, 
+        "img": "./img/pizza.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 9, 
+        "nombre": "Salmón", 
+        "precio": 800, 
+        "img": "./img/salmon.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 10, 
+        "nombre": "Ensalada", 
+        "precio": 600, 
+        "img": "./img/salad.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 11, 
+        "nombre": "lasagna", 
+        "precio": 900, 
+        "img": "./img/lasagna.jpg",
+        "cantidad": 1
+    },
+
+    {
+        "id": 12, 
+        "nombre": "burger", 
+        "precio": 800, 
+        "img": "./img/burger.jpg",
+        "cantidad": 1
+    }
+]
