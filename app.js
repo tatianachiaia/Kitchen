@@ -1,17 +1,17 @@
-let menu = [
-    {id: 1, nombre: "Avo Toast", cantidad: 1, precio: 1000,  img: './img/toast.jpg'},
-    {id: 2, nombre: "Burrito", cantidad: 1, precio: 1100, img: './img/burrito.jpg'},
-    {id: 3, nombre: "Sopa", cantidad: 1, precio: 900, img: './img/soup.jpg'},
-    {id: 4, nombre: "Salmon", cantidad: 1, precio: 2400, img: './img/salmon.jpg'},
-    {id: 5, nombre: "Ensalada", cantidad: 1, precio: 1200, img: './img/salad.jpg'},
-    {id: 6, nombre: "Pizza", cantidad: 1, precio: 1500, img: './img/pizza.jpg'},
-    {id: 7, nombre: "Pasta", cantidad: 1,  precio: 1000, img: './img/pasta.jpg'},
-    {id: 8, nombre: "Carne", cantidad: 1,  precio: 2200, img: './img/steak.jpg'},
-    {id: 9, nombre: "Lasagna", cantidad: 1,  precio: 1500, img: './img/lasagna.jpg'},
-    {id: 10, nombre: "Burger", cantidad: 1,  precio: 1100, img: './img/burger.jpg'},
-    {id: 11, nombre: "Brownie", cantidad: 1,  precio: 900, img: './img/brownie.jpg'},
-    {id: 12, nombre: "cheesecake", cantidad: 1,  precio: 950, img: './img/cake.jpg'},
-]
+// let menu = [
+//     {id: 1, nombre: "Avo Toast", cantidad: 1, precio: 1000,  img: './img/toast.jpg'},
+//     {id: 2, nombre: "Burrito", cantidad: 1, precio: 1100, img: './img/burrito.jpg'},
+//     {id: 3, nombre: "Sopa", cantidad: 1, precio: 900, img: './img/soup.jpg'},
+//     {id: 4, nombre: "Salmon", cantidad: 1, precio: 2400, img: './img/salmon.jpg'},
+//     {id: 5, nombre: "Ensalada", cantidad: 1, precio: 1200, img: './img/salad.jpg'},
+//     {id: 6, nombre: "Pizza", cantidad: 1, precio: 1500, img: './img/pizza.jpg'},
+//     {id: 7, nombre: "Pasta", cantidad: 1,  precio: 1000, img: './img/pasta.jpg'},
+//     {id: 8, nombre: "Carne", cantidad: 1,  precio: 2200, img: './img/steak.jpg'},
+//     {id: 9, nombre: "Lasagna", cantidad: 1,  precio: 1500, img: './img/lasagna.jpg'},
+//     {id: 10, nombre: "Burger", cantidad: 1,  precio: 1100, img: './img/burger.jpg'},
+//     {id: 11, nombre: "Brownie", cantidad: 1,  precio: 900, img: './img/brownie.jpg'},
+//     {id: 12, nombre: "cheesecake", cantidad: 1,  precio: 950, img: './img/cake.jpg'},
+// ]
 
 
 const contenedorProductos = document.getElementById('contenedor-productos')
@@ -39,44 +39,44 @@ botonVaciar.addEventListener('click', () => {
 
 // por cada producto se presenta un div en el html
 
-menu.forEach((producto) => {
-    const div = document.createElement('div')
-    div.classList.add('producto')
-    div.innerHTML = `
-    <img src=${producto.img} id="${producto.id}" alt= "">
-    <h2>${producto.nombre}</h2>
-    <p class="precioProducto">$${producto.precio}</p>`
-    contenedorProductos.appendChild(div)
+// menu.forEach((producto) => {
+//     const div = document.createElement('div')
+//     div.classList.add('producto')
+//     div.innerHTML = `
+//     <img src=${producto.img} id="${producto.id}" alt= "">
+//     <h2>${producto.nombre}</h2>
+//     <p class="precioProducto">$${producto.precio}</p>`
+//     contenedorProductos.appendChild(div)
 
-    const boton = document.getElementById(`${producto.id}`)
+//     const boton = document.getElementById(`${producto.id}`)
    
-    boton.addEventListener('click', () => {
-        // btn agregar el carrito con el id del producto
-        agregarAlCarrito(producto.id)
-    })
-})
+//     boton.addEventListener('click', () => {
+//         // btn agregar el carrito con el id del producto
+//         agregarAlCarrito(producto.id)
+//     })
+// })
 
 
 
 ///// fetch (generando lo mismo que arriba pero con fetch)
 
-// fetch("productos.json")
-// .then((response) => response.json())
-// .then((data) => data.forEach((producto) => {
-//     const div = document.createElement("div")
-//     div.classList.add('producto')
-//     div.innerHTML = `
-//     <img src=${producto.img} id="${producto.id}" alt= "">
-//     <h2>${producto.nombre}</h2>
-//     <p class="precioProducto">$${producto.precio}</p>
-//     `
-//     contenedorProductos.appendChild(div)
-//     const boton = document.getElementById(`${producto.id}`)
-//     boton.addEventListener('click', () => {
-//         // btn agregar el carrito con el id del producto
-//         agregarAlCarrito(producto.id)
-//     })
-// }))
+fetch("productos.json")
+.then((response) => response.json())
+.then((data) => data.forEach((producto) => {
+    const div = document.createElement("div")
+    div.classList.add('producto')
+    div.innerHTML = `
+    <img src=${producto.img} id="${producto.id}" alt= "">
+    <h2>${producto.nombre}</h2>
+    <p class="precioProducto">$${producto.precio}</p>
+    `
+    contenedorProductos.appendChild(div)
+    const boton = document.getElementById(`${producto.id}`)
+    boton.addEventListener('click', () => {
+        // btn agregar el carrito con el id del producto
+        agregarAlCarrito(producto.id)
+    })
+}))
 
 ///////////
 
@@ -96,7 +96,9 @@ const agregarAlCarrito = (prodId) => {
             }
         })
     } else { //en caso de que no este, agregamos el producto al carrito
-        const item = menu.find((prod) => prod.id === prodId)
+        const item = fetch("productos.json") // (antes de fetch iba: menu.find)
+        .then((response) => response.json())
+        .then((data) => data.find((prod) => prod.id === prodId))
         //Una vez obtenida el ID, hacemos un push para agregarlo al carrito
         carrito.push(item)
     }
