@@ -6,13 +6,9 @@
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Quicksand', sans-serif;
-}
-img {
-    width: 100%;
-    margin-bottom: 10px;
-}
+
+/* header */
+
 header {
     height: 70px;
     width: 100%;   
@@ -51,8 +47,18 @@ h1 {
     color: white;
     background-color:rgb(186, 141, 141);
 }
-#boton-carrito:focus {
-    outline: none;
+
+
+
+/* Body / Productos */
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+img {
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 #contenedor-productos {
@@ -66,8 +72,6 @@ h1 {
 p {
     line-height: 1.8;
 }
-
-
 
 .producto {
     max-width: 100%;
@@ -89,8 +93,13 @@ p {
 .precioProducto {
     font-weight: 700;
 }
-.boton-agregar {
-    background-color: rgb(186, 141, 141, 0.60);
+
+
+
+/* carrito */
+
+.boton-vaciar {
+    background-color: rgb(207, 166, 166);
     color: white;
     font-size: 18px;
     font-weight: 100;
@@ -98,17 +107,19 @@ p {
     padding: 10px;
     border: none;
 }
-.boton-agregar:hover {
-    cursor: pointer;
-}
 
+.boton-vaciar:hover {
+    cursor: pointer;
+    background-color: rgb(186, 141, 141, 0.60);
+    
+}
 
 .modal-contenedor {
     position: fixed;
     top: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,13 +161,11 @@ p {
 }
 .modal-carrito #carritoCerrar:hover {
     cursor: pointer;
+    color: rgb(207, 166, 166);
 }
-.modal-carrito #carritoCerrar:focus {
-    outline: none;
-}
+
 .modal-carrito .precioProducto {
     padding-top: 10px;
-    
 }
 
 .productoEnCarrito {
@@ -168,6 +177,7 @@ p {
     display: flex;
     justify-content: space-between;
 }
+
 .productoEnCarrito:hover {
     border-left: 5px solid rgb(186, 141, 141);
 }
@@ -181,7 +191,42 @@ p {
 
 .boton-eliminar:hover {
     cursor: pointer;
+    color: rgb(197, 25, 25);
 }
-.boton-eliminar:focus {
-    outline: none;
+
+
+
+/* Footer */
+
+.pie {
+    background-color: rgb(186, 141, 141, 0.70);
+    color: white;
+}
+
+.pie h2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px; 
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.footer span {
+    font-size: 17px;
+    padding: 10px 40px;
+}
+
+.footer span a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer span a:hover {
+    color: rgb(215, 241, 255);
 }
