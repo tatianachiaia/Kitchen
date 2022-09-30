@@ -50,7 +50,7 @@ h1 {
 
 
 
-/* Body / Productos */
+/* Body - Productos */
 
 body{
     font-family: 'Quicksand', sans-serif;
@@ -97,6 +97,19 @@ p {
 
 
 /* carrito */
+
+.fa-solid {
+    cursor: pointer;
+}
+.cantidad {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+#cantidad {
+    padding: 0px 10px;
+}
 
 .boton-vaciar {
     background-color: rgb(207, 166, 166);
@@ -176,6 +189,7 @@ p {
     padding: 5px 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .productoEnCarrito:hover {
@@ -230,3 +244,17 @@ p {
 .footer span a:hover {
     color: rgb(215, 241, 255);
 }
+
+
+/* Media */
+
+@media screen and (max-width: 500px){
+    .modal-carrito {
+        min-width: 350px;
+    }
+    #contenedor-productos {
+        margin: 0px;
+    }
+}
+
+

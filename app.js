@@ -92,7 +92,7 @@ carritoContenedor.addEventListener("click", e => {
         let item = carrito.find(prod => prod.id == id);
         item.cantidad-- 
         if (item.cantidad < 1) {
-            eliminarDelCarrito() // no funciona
+            item.cantidad = 1
         }
     }
     localStorage.setItem('carrito', JSON.stringify(carrito))
@@ -108,10 +108,12 @@ const actualizarCarrito = () => {
         div.className = ('productoEnCarrito')
         div.innerHTML = `
         <p>${prod.nombre}</p>
-        <p>Precio: $${prod.precio}</p>
+        <p>$${prod.precio}</p>
+        <div class="cantidad">
         <i class="fa-solid fa-chevron-up" data-id=${prod.id}></i>
         <p id="cantidad"> ${prod.cantidad}</p>
         <i class="fa-solid fa-chevron-down" data-id=${prod.id}></i>
+        </div>
         <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
         `
         contenedorCarrito.appendChild(div)

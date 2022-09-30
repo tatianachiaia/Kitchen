@@ -59,7 +59,7 @@
         "id": 8, 
         "nombre": "Carne", 
         "precio": 2100, 
-        "img": "./img/Steak.jpg",
+        "img": "./img/steak.jpg",
         "cantidad": 1
     },
 
