@@ -27,10 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // Vaciar carrito
 
 botonVaciar.addEventListener('click', () => {
-    carrito = []
-    localStorage.setItem("carrito",[])
+    let cartItems = carrito.map(item => item.id);
+    cartItems.forEach(id => eliminarDelCarrito(id));
+    while (carritoContenedor.children.length > 0) {
+        carritoContenedor.removeChild(carritoContenedor.children[0]);
+    }
     actualizarCarrito()
-})
+    localStorage.setItem("carrito",[])
+}
+)
 
 
 // Por cada producto se presenta un div en el html
@@ -75,7 +80,7 @@ const agregarAlCarrito = (prodId) => {
 // Eliminar elemento individual del carrito
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
-
+    item.cantidad = 1;
     const indice = carrito.indexOf(item) //Busca el elemento que yo le pase y nos devuelve su indice.
 
     carrito.splice(indice, 1) //Le pasamos el indice de mi elemento ITEM y borramos un elemento 
@@ -108,7 +113,7 @@ const actualizarCarrito = () => {
         div.className = ('productoEnCarrito')
         div.innerHTML = `
         <p>${prod.nombre}</p>
-        <p>$${prod.precio}</p>
+        <p>Precio: $${prod.precio}</p>
         <div class="cantidad">
         <i class="fa-solid fa-chevron-up" data-id=${prod.id}></i>
         <p id="cantidad"> ${prod.cantidad}</p>
